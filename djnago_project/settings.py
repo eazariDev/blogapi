@@ -46,10 +46,14 @@ INSTALLED_APPS = [
         
 ]
 
-
+# 4 modes:
+#  - AllowAny
+#  - IsAuthenticated
+#  - IsAdminUser
+#  - IsAuthenticatedOrReadOnly
 REST_FRAMEWORK = {
-    "DEFAULT_PERISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
     ],
 }
 
@@ -58,7 +62,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     
-    'corsheader.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
