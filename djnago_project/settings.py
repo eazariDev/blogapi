@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     
+    'drf_spectacular',
+    
     'accounts.apps.AccountsConfig',
     'posts.apps.PostsConfig',
         
@@ -70,6 +72,17 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
         
     ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+# spectacular settings
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Blog API Project",
+    "DESCRIPTION": "A sample blog to get more experience with django DRF",
+    "VERSION": "1.0.0",
+    
+    # OTHER SETTINGS
+    
 }
 
 
